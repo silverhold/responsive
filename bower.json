@@ -1,0 +1,22 @@
+{
+  "name": "responisve-helper",
+  "homepage": "https://github.com/LoicGoyet/responsive-helper",
+  "authors": [
+    "Loïc Goyet <loic@appventus.com>"
+  ],
+  "description": "Sass helper for managing responsive media queries on projects",
+  "main": "responsive-helper.scss",
+  "keywords": [
+    "sass",
+    "responsive",
+    "helper"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
