@@ -1,6 +1,12 @@
 # responsive-helper
 Sass helper for managing responsive media queries on projects
 
+## Install
+You can install responsive-helper with bower using the following command
+```shell
+$ bower install responsive-helper
+```
+
 ## Usages
 
 ### Setting responsive breakpoints
@@ -104,13 +110,13 @@ To hidden on a specific breakpoint follow the pattern :
 #### Visible
 To make visible on a specific breakpoint follow the pattern
 ```html
-<div class="visible--[breakpoint]--[display]"></div>
+<div class="visible--[breakpoint]-[display]"></div>
 ```
 
 ##### Example
 ```html
 <!-- this div will not be displayed on viewport between 768px and 991px -->
-<div class="visible--sm--block"></div>
+<div class="visible--sm-block"></div>
 ```
 
 As default, there is only three display type that are compiled (block, inline-block, inline) but you can add more by redefining the `$visible-displays` variable map.
