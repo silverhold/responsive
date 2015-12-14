@@ -1,0 +1,5 @@
+@mixin media-query($breakpoint, $type) {
+    @media #{get-queries($breakpoint, $type)} {
+        @content;
+    }
+}
