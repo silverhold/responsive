@@ -1,3 +1,27 @@
 @import 'parameters';
 @import 'functions';
 @import 'mixins';
+
+@if $hidden-helpers {
+    @each $breakpoint, $values in $reponsive__breakpoints {
+        .#{$hidden-helpers-prefix}#{$breakpoint} {
+            @include media-query($breakpoint, 'restrictive') {
+                @include hidden;
+            }
+        }
+    }
+}
+
+@if $visible-helpers {
+    @each $breakpoint, $values in $reponsive__breakpoints {
+        @each $display in $visible-displays {
+            .#{$visible-helpers-prefix}#{$breakpoint}-#{$display} {
+                @include hidden;
+
+                @include media-query($breakpoint, 'restrictive') {
+                    @include visible($display);
+                }
+            }
+        }
+    }
+}

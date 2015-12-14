@@ -3,3 +3,13 @@
         @content;
     }
 }
+
+@mixin hidden {
+    display: none;
+    visibility: hidden;
+}
+
+@mixin visible ($display: block) {
+    display: $display;
+    visibility: visible;
+}

@@ -15,4 +15,10 @@ $reponsive__breakpoints: (
         'min': 1200px,
         'max': '∞',
     ),
-);
+) !default;
+
+$hidden-helpers: true !default;
+$hidden-helpers-prefix: 'hidden--' !default;
+$visible-helpers: true !default;
+$visible-displays: (block, inline-block, inline) !default;
+$visible-helpers-prefix: 'visible--' !default;
