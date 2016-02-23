@@ -1,0 +1,9 @@
+{
+    "stylevendor": [
+        "@bower/responsive-helper/responsive-helper.scss"
+    ],
+
+    "gui": [
+        "@bower/responsive-helper/gui.html.twig"
+    ]
+}
