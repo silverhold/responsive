@@ -1,5 +1,5 @@
 {
-    "stylevendor": [
+    "styleutils": [
         "@bower/responsive-helper/responsive-helper.scss"
     ],
 
