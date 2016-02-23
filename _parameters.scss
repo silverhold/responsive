@@ -1,20 +1,9 @@
 $reponsive__breakpoints: (
-    'xs': (
-        'min': 0,
-        'max': 767px,
-    ),
-    'sm': (
-        'min': 768px,
-        'max': 991px,
-    ),
-    'md': (
-        'min': 992px,
-        'max': 1199px,
-    ),
-    'lg': (
-        'min': 1200px,
-        'max': '∞',
-    ),
+  'xs': ('min': 0, 'max': 374px),
+  'sm': ('min': 375px, 'max': 524px),
+  'md': ('min': 525px, 'max': 959px),
+  'lg': ('min': 960px, 'max': 1199px),
+  'xl': ('min': 1200px, 'max': '∞')
 ) !default;
 
 $hidden-helpers: true !default;
