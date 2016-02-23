@@ -3,7 +3,7 @@
 @import 'mixins';
 
 @if $hidden-helpers {
-    @each $breakpoint, $values in $reponsive__breakpoints {
+    @each $breakpoint, $values in $breakpoints {
         .#{$hidden-helpers-prefix}#{$breakpoint} {
             @include media-query($breakpoint, 'restrictive') {
                 @include hidden;
@@ -13,7 +13,7 @@
 }
 
 @if $visible-helpers {
-    @each $breakpoint, $values in $reponsive__breakpoints {
+    @each $breakpoint, $values in $breakpoints {
         @each $display in $visible-displays {
             .#{$visible-helpers-prefix}#{$breakpoint}-#{$display} {
                 @include hidden;

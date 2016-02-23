@@ -13,23 +13,12 @@ $ bower install responsive-helper
 Firstable you have to set your responsive breakpoints, based on this model (which is !default values):
 
 ```scss
-$reponsive__breakpoints: (
-    'xs': (
-        'min': 0,
-        'max': 767px,
-    ),
-    'sm': (
-        'min': 768px,
-        'max': 991px,
-    ),
-    'md': (
-        'min': 992px,
-        'max': 1199px,
-    ),
-    'lg': (
-        'min': 1200px,
-        'max': '∞',
-    ),
+$breakpoints: (
+  'xs': ('min': 0, 'max': 374px),
+  'sm': ('min': 375px, 'max': 524px),
+  'md': ('min': 525px, 'max': 959px),
+  'lg': ('min': 960px, 'max': 1199px),
+  'xl': ('min': 1200px, 'max': '∞')
 ) !default;
 ```
 
@@ -46,7 +35,7 @@ This map will allow you to use the `media-query` mixin made to generate media qu
 ```
 
 There is to parameters to the mixin:
-* The breakpoint tag refering to the `$reponsive__breakpoints` map variable you defined before
+* The breakpoint tag refering to the `$breakpoints` map variable you defined before
 * The responsive philosophy of the media query. It can be `mobile-first`, `desktop-first` or `restrictive`.
     * `mobile-first` will generate a query based on the min-width of the breakpoint tag
     * `desktop-first` will generate a query based on the max-width of the breakpoint tag
@@ -92,7 +81,7 @@ There is to parameters to the mixin:
 ```
 
 ### Helper Classes
-Also based on the `$reponsive__breakpoints` map, responsive-helper generates helper classes to hide or display on specific breakpoints an element.
+Also based on the `$breakpoints` map, responsive-helper generates helper classes to hide or display on specific breakpoints an element.
 
 #### Hidden
 To hidden on a specific breakpoint follow the pattern :

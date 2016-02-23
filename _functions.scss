@@ -1,5 +1,5 @@
 @function get-media-values($breakpoint) {
-    @return map-get($reponsive__breakpoints, $breakpoint);
+    @return map-get($breakpoints, $breakpoint);
 }
 
 @function get-queries($breakpoint, $type) {
