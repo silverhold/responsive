@@ -61,7 +61,7 @@ There is to parameters to the mixin:
     }
 }
 // Will compile into
-@media (max-width: 991ox) {
+@media (max-width: 991px) {
     .selector {
         position: relative;
     }
