@@ -12,6 +12,14 @@
   {% set displays = ['block', 'inline', 'inline-block'] %}
 {% endif %}
 
+{% if hiddenHelpers is not defined %}
+    {% set hiddenHelpers = true %}
+{% endif %}
+
+{% if visibleHelpers is not defined %}
+    {% set visibleHelpers = true %}
+{% endif %}
+
 {% set style = {
   'visible': 'color: #468847; background-color: #dff0d8;',
   'hidden': 'color: #ccc; background-color: #f9f9f9;',
@@ -22,7 +30,7 @@
 
   <p>Here is listed all the breakpoint used in this GUI :</p>
 
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <th></th>
@@ -50,73 +58,79 @@
     </tbody>
   </table>
 
-  <h3>Display responsive helpers</h3>
-  <p>Use a single or combination of the available classes for toggling content across viewport breakpoints.</p>
+  {% if hiddenHelpers or visibleHelpers %}
+      <h3>Display responsive helpers</h3>
+      <p>Use a single or combination of the available classes for toggling content across viewport breakpoints.</p>
 
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        {% for breakpoint, values in breakpoints %}
-          <th>{{ breakpoint }}</th>
-        {% endfor %}
-      </tr>
-    </thead>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            {% for breakpoint, values in breakpoints %}
+              <th>{{ breakpoint }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
 
-    <tbody>
-      {% for breakpoint, values in breakpoints %}
-        <tr>
-          <th><code>.visible--{{ breakpoint }}-*</code></th>
+        <tbody>
+            {% if visibleHelpers %}
+                {% for breakpoint, values in breakpoints %}
+                    <tr>
+                        <th><code>.visible--{{ breakpoint }}-*</code></th>
 
-          {% for brkpt, vals in breakpoints %}
-            {% if breakpoint == brkpt  %}
-              <th style="{{ style.visible }}">visible</th>
-            {% else %}
-              <th style="{{ style.hidden }}">hidden</th>
+                        {% for brkpt, vals in breakpoints %}
+                            {% if breakpoint == brkpt  %}
+                                <th style="{{ style.visible }}">visible</th>
+                            {% else %}
+                                <th style="{{ style.hidden }}">hidden</th>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
             {% endif %}
-          {% endfor %}
-        </tr>
-      {% endfor %}
 
-      {% for breakpoint, values in breakpoints %}
-        <tr>
-          <th><code>.hidden--{{ breakpoint }}</code></th>
+            {% if hiddenHelpers %}
+                {% for breakpoint, values in breakpoints %}
+                    <tr>
+                        <th><code>.hidden--{{ breakpoint }}</code></th>
 
-          {% for brkpt, vals in breakpoints %}
-            {% if breakpoint == brkpt  %}
-              <th style="{{ style.hidden }}">hidden</th>
-            {% else %}
-              <th style="{{ style.visible }}">visible</th>
+                        {% for brkpt, vals in breakpoints %}
+                            {% if breakpoint == brkpt  %}
+                                <th style="{{ style.hidden }}">hidden</th>
+                            {% else %}
+                                <th style="{{ style.visible }}">visible</th>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
             {% endif %}
+        </tbody>
+      </table>
+
+      <p>The <code>.visible-*-*</code> classes for each breakpoint come in three variations, one for each CSS display property value listed below.</p>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Group of classes</th>
+
+            <th>CSS <code>display</code></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for display in displays %}
+            <tr>
+              <td>
+                <code>.visible--*-{{ display }}</code>
+              </td>
+
+              <td>
+                <code>display: {{ display }};</code>
+              </td>
+            </tr>
           {% endfor %}
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-
-  <p>The <code>.visible-*-*</code> classes for each breakpoint come in three variations, one for each CSS display property value listed below.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Group of classes</th>
-
-        <th>CSS <code>display</code></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      {% for display in displays %}
-        <tr>
-          <td>
-            <code>.visible--*-{{ display }}</code>
-          </td>
-
-          <td>
-            <code>display: {{ display }};</code>
-          </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+        </tbody>
+      </table>
+  {% endif %}
 </section>
