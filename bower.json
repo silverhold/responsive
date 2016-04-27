@@ -1,10 +1,10 @@
 {
-  "name": "responsive-helper",
-  "homepage": "https://github.com/LoicGoyet/responsive-helper",
+  "name": "trowel-responsive",
+  "homepage": "https://github.com/Trowel/responsive",
   "authors": [
     "Loïc Goyet <loic@appventus.com>"
   ],
-  "description": "Sass helper for managing responsive media queries on projects",
+  "description": "A trowel component to manage media-queries",
   "main": "responsive-helper.scss",
   "keywords": [
     "sass",
