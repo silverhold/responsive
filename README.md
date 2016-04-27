@@ -4,7 +4,7 @@ Sass helper for managing responsive media queries on projects
 ## Install
 You can install responsive-helper with bower using the following command
 ```shell
-$ bower install responsive-helper
+$ bower install trowel-responsive
 ```
 
 ## Usages
