@@ -29,3 +29,11 @@
 
     @return $queries;
 }
+
+@function is-breakpoint($string) {
+    @if type-of($string) != 'string' {
+        @return false;
+    }
+
+    @return map-has-key($breakpoints, $string);
+}
