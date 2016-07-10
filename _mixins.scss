@@ -13,3 +13,21 @@
     display: $display;
     visibility: visible;
 }
+
+@mixin responsive-values($property, $values, $philosophy: 'mobile-first') {
+    @if type-of($values) == 'map' {
+        @each $tag, $value in $values {
+            @if is-breakpoint($tag) {
+                @include media-query($tag, $philosophy) {
+                    #{$property}: $value;
+                }
+            } @elseif $tag == 'default' {
+                #{$property}: $value;
+            } @else {
+                @error 'If the responsive-values mixin second param is a map, it must have as key a breakpoint-tag setted into the $breakpoints map or the "default" string';
+            }
+        }
+    } @else {
+        #{$property}: $values;
+    }
+}
