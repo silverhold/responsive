@@ -1,10 +1,10 @@
 {
-  "name": "trowel-responsive",
-  "homepage": "https://github.com/Trowel/responsive",
+  "name": "silverhold-responsive",
+  "homepage": "https://github.com/silverhold/responsive",
   "authors": [
     "Loïc Goyet <loic@appventus.com>"
   ],
-  "description": "A trowel component to manage media-queries",
+  "description": "A silverhold component to manage media-queries",
   "main": "responsive-helper.scss",
   "keywords": [
     "sass",
